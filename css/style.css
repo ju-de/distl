@@ -5,13 +5,14 @@
 }
 
 .content {
+  color: #7DB4B5;
   text-align: center;
 	width: 500px;
 	height: 420px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 48px;
 }
 
 .content img{
@@ -29,7 +30,7 @@
 	user-select: none;
 }
 
-button {
+.content button.main {
     background-color: #7DB4B5;
     border: none;
     color: white;
@@ -46,9 +47,26 @@ button {
     transition-duration: 0.4s;
 }
 
-button:hover {
+.content button.main:hover {
     background-color: #680148;
-    color: white;
+}
+
+.content button.rate{
+    font-size: 20px;
+    background-color: white;
+    color: #E0EFF1;
+    margin-top: 5px;
+
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.content button.rate:hover{
+    color: #7DB4B5;
 }
 
 /* Textbox */
@@ -127,23 +145,20 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* Let's get this party started */
 ::-webkit-scrollbar {
     width: 12px;
 }
  
-/* Track */
 ::-webkit-scrollbar-track {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
  
-/* Handle */
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #E0EFF1; 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255,0,0,0.4); 
+    background: #E0EFF1;
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
