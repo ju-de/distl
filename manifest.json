@@ -6,15 +6,15 @@
   "version": "1.0",
 
   "homepage_url": "https://github.com/ju-de/tldr",
-  
+
   "icons": {
-     "16": "icon-16.png",
-     "128": "icon-128.png"
+     "16": "images/icon-16.png",
+     "128": "images/icon-128.png"
    },
 
   "browser_action": {
     "default_title": "tldr",
-    "default_icon": "icon-19.png",
+    "default_icon": "images/icon-19.png",
     "default_popup": "popup.html"
   },
 
