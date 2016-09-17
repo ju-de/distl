@@ -1,7 +1,7 @@
 .toggle{
-    position:absolute;
-    top:10px;
-    right: 10px;
+  position:absolute;
+  top:10px;
+  right: 10px;
 }
 
 .content {
@@ -23,67 +23,74 @@
 	
   /*disable highlighting*/
 	-webkit-user-select: none;
-    -webkit-touch-callout: none;
+  -webkit-touch-callout: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
 
-.content button.main {
-    background-color: #7DB4B5;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.content button:focus{
+  outline:0;
+}
 
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+.content button.main {
+  background-color: #7DB4B5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .content button.main:hover {
-    background-color: #680148;
+  background-color: #680148;
 }
 
 .content button.rate{
-    font-size: 20px;
-    background-color: white;
-    color: #E0EFF1;
-    margin-top: 5px;
+  font-size: 20px;
+  background-color: white;
+  color: #E0EFF1;
+  margin-top: 5px;
 
-    border: none;
-    text-align: center;
-    text-decoration: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
 
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .content button.rate:hover{
-    color: #7DB4B5;
+  color: #7DB4B5;
 }
 
 /* Textbox */
 textarea {
-    width: 400px;
-    height: 300px;
-    display: block;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 400px;
+  height: 300px;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea:focus {
+  outline: 0;
 }
 
 /* Disable link underline */
-a:hover, a:visited, a:link, a:active
-{
-    cursor: default;
-    text-decoration: none;
+a:hover, a:visited, a:link, a:active{
+  cursor: default;
+  text-decoration: none;
 }
 
 /* The switch - the box around the slider */
@@ -146,19 +153,19 @@ input:checked + .slider:before {
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
  
 ::-webkit-scrollbar-track {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
  
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #E0EFF1;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #E0EFF1;
 
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
