@@ -26,5 +26,5 @@ var server = app.listen(process.env.PORT || '8080', function () {
 app.post('/distl', function(req, res) {
 	console.log(req.body);
 	console.log("hi");
-	res.send();
+	res.send(req.body);
 });
