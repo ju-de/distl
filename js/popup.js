@@ -1,5 +1,5 @@
 function makeExtractRequest(url, callback) {
-  var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "?extractor=ArticleExtractor&output=text";
+  var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "?extractor=ArticleExtractor&output=htmlFragment";
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("GET", fullUrl, true);
   xmlHttp.onreadystatechange = function() {
@@ -13,8 +13,10 @@ function makeExtractRequest(url, callback) {
 function onTextExtracted(response, statusCode) {
   console.log(statusCode);
   console.log(response);
+  var processedText = extract(response);
+  console.log(processedText);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+$('document').ready(function() {
   makeExtractRequest("http://waitbutwhy.com/2016/09/marriage-decision.html", onTextExtracted);
 });
