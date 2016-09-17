@@ -5,20 +5,22 @@
 }
 
 .content {
+  text-align: center;
 	width: 500px;
-	height: 400px;
+	height: 420px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .content img{
+  margin-top: 100px;
+  margin-bottom: 20px;
 	height: auto;
 	width: 30%;
-	display: block;
-	margin-top: 128px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-
-    /*disable highlighting*/
+	
+  /*disable highlighting*/
 	-webkit-user-select: none;
     -webkit-touch-callout: none;
 	-khtml-user-select: none;
@@ -37,7 +39,8 @@ button {
     display: inline-block;
     font-size: 16px;
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
@@ -48,9 +51,21 @@ button:hover {
     color: white;
 }
 
+/* Textbox */
 textarea {
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Disable link underline */
+a:hover, a:visited, a:link, a:active
+{
+    cursor: default;
+    text-decoration: none;
 }
 
 /* The switch - the box around the slider */
@@ -110,4 +125,25 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #E0EFF1; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,0,0,0.4); 
 }
