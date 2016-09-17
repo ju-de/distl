@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "tldr",
+  "name": "distl",
   "description": "",
   "version": "1.0",
 
@@ -13,7 +13,7 @@
    },
 
   "browser_action": {
-    "default_title": "tldr",
+    "default_title": "distl",
     "default_icon": "images/icon-19.png",
     "default_popup": "popup.html"
   },
