@@ -1,4 +1,5 @@
 function getSummary() {
+	console.log("we in this");
 
 	var oldLength = 100;
 	var summary = "text goes here";
