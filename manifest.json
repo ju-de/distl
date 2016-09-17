@@ -1,17 +1,23 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "tldr",
+  "description": "",
   "version": "1.0",
 
+  "homepage_url": "https://github.com/ju-de/tldr",
+  
+  "icons": {
+     "16": "icon-16.png",
+     "128": "icon-128.png"
+   },
+
   "browser_action": {
-    "default_icon": {
-      "19": "icon.png",
-      "38": "icon.png"
-    },
+    "default_title": "tldr",
+    "default_icon": "icon-19.png",
     "default_popup": "popup.html"
   },
+
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
