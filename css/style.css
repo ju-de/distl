@@ -1,59 +1,163 @@
 .toggle{
-    position:absolute;
-    top:10px;
-    right: 10px;
+  position:absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .content {
+  color: #7DB4B5;
+  text-align: center;
 	width: 500px;
-	height: 400px;
+	height: 420px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content img{
+  margin-top: 100px;
+  margin-bottom: 20px;
 	height: auto;
 	width: 30%;
-	display: block;
-	margin-top: 128px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-
-    /*disable highlighting*/
+	
+  /*disable highlighting*/
 	-webkit-user-select: none;
-    -webkit-touch-callout: none;
+  -webkit-touch-callout: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
 
-button {
-    background-color: #7DB4B5;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    display: block;
-    margin: 0 auto;
-
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+.content button:focus{
+  outline: 0;
 }
 
-button:hover {
-    background-color: #680148;
-    color: white;
+/* Summarize button */
+.content button.main {
+  background-color: #7DB4B5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.content button.main:hover {
+  background-color: #680148;
+}
+
+/* Copy button */
+.copy{
+  position: absolute;
+  right: 70px;
+  bottom: 90px;
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  opacity: 0.9;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.copy:hover {
+  color: #7DB4B5;
+}
+
+.copy:focus{
+  outline: 0;
+}
+
+/* Loading icon */
+.loading {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+/* Thumbs up/down button */
+#up {
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  margin-top: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#up:hover {
+  color: #7DB4B5;
+}
+
+#up:focus{
+  outline: 0;
+}
+
+#down {
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  margin-top: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#down:hover {
+  color: #7DB4B5;
+}
+
+#down:focus{
+  outline: 0;
+}
+
+/* Textbox */
+.content textarea {
+  font-size: 14px;
+  width: 400px;
+  height: 300px;
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  resize: none;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.content textarea:focus {
+  outline: 0;
 }
 
 textarea {
-    width: 300px;
-    height: 150px;
+  display: none;
 }
 
-/* The switch - the box around the slider */
+/* Disable link underline */
+a:hover, a:visited, a:link, a:active {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Toggle button */
 .switch {
   position: relative;
   display: inline-block;
@@ -61,10 +165,10 @@ textarea {
   height: 24px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+  display:none;
+}
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -110,4 +214,22 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #E0EFF1;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }

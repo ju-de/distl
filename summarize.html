@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/font-awesome-4.6.3/css/font-awesome.min.css">
     <title>d;stl</title>
     <style>
       body {
@@ -19,24 +20,24 @@
     </style>
 
     <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/popup.js"></script>
-    <script src="js/extract.js"></script>
     <script src="js/toggle.js"></script>
+    <script src="js/summary.js"></script>
+    <script src="js/extract.js"></script>
   </head>
-  <body> 
+  <body>
       <!-- Toggle ON/OFF -->
       <div class="toggle">
-        <label class="switch" id="hover">
-          <input type="checkbox" checked="true">
+        <label class="switch">
+          <input type="checkbox" id="hover" checked="true">
           <div class="slider round"></div>
         </label>
       </div>
     <div class="content">
-      <!-- Logo -->
-      <img src="images/logo.png"></img>
-      <a href="summarize.html">
-        <button class="main" id="summarize_button">Summarize</button>
-      </a>
+      <p id="lengths">Sit tight, we're reading your page...</p>
+        <span class="sr-only">Loading...</span>
+        <div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>
+        <span id="rate"></span>
     </div>
+    <textarea id="hidden"></textarea>
   </body>
 </html>
