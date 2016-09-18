@@ -55,6 +55,8 @@ function onSummarizeResponse(response, statusCode) {
   response = response.replace(/(\\r\\n|\\r|\\n){2,}/g, '$1\\n');
   // remove leading and trailing newlines 
   response = response.replace(/^\\n+|\\n+$/g,'');
+  // strip "Title" at beginning just in case
+  response = response.replace(/Title\\n\\n/g,'');
   console.log("\n\nStripped result:\n\n" + response);
 
   var jsonResponse = JSON.parse(response);
@@ -108,9 +110,9 @@ function thumbsDown() {
 window.onload = function() {
 
   // setup buttons
-  document.getElementById("copy").addEventListener("click", onCopy);
-  document.getElementById("up").addEventListener("click", thumbsUp);
-  document.getElementById("down").addEventListener("click", thumbsDown);
+  $(document).on("click", "#copy", onCopy);
+  $(document).on("click", "#up", thumbsUp);
+  $(document).on("click", "#down", thumbsDown);
 
   chrome.tabs.query(
     {
