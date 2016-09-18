@@ -57,11 +57,29 @@ function getSummary(summary) {
 
 function onCopy() {
 
-	window.close();
+	document.getElementById('summary').select();
+	document.execCommand('copy');
+
+}
+
+function thumbsUp() {
+
+	document.getElementById('up').style.color = "#7DB4B5";
+	document.getElementById('down').disabled = true;
+
+}
+
+function thumbsDown() {
+
+	document.getElementById('down').style.color = "#7DB4B5";
+	document.getElementById('up').disabled = true;
 
 }
 
 window.onload = function() {
   document.getElementById("copy").addEventListener("click", onCopy);
+  document.getElementById("up").addEventListener("click", thumbsUp);
+  document.getElementById("down").addEventListener("click", thumbsDown);
+  
   makeExtractRequest("http://waitbutwhy.com/2016/09/marriage-decision.html", onTextExtracted);
 }

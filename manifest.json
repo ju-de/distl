@@ -20,5 +20,16 @@
 
   "permissions": [
     "*://*/"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/"],
+      "exclude_globs": [
+        "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
+        "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
+      ],
+      "js": ["js/hover.js"]
+    }
   ]
 }
