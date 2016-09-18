@@ -16,9 +16,9 @@
 
 .content img{
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 	height: auto;
-	width: 30%;
+	width: 25%;
 	
   /*disable highlighting*/
 	-webkit-user-select: none;
@@ -56,6 +56,7 @@
 
 /* Copy button */
 .copy{
+  display: none;
   position: absolute;
   right: 70px;
   bottom: 90px;
@@ -88,6 +89,7 @@
 
 /* Thumbs up/down button */
 #up {
+  display: none;
   font-size: 20px;
   background-color: transparent;
   color: #E0EFF1;
@@ -109,6 +111,7 @@
 }
 
 #down {
+  display: none;
   font-size: 20px;
   background-color: transparent;
   color: #E0EFF1;
@@ -129,12 +132,23 @@
   outline: 0;
 }
 
+#rate {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#sentiment {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+}
+
 /* Textbox */
-.content textarea {
+textarea {
+  display: none;
   font-size: 14px;
   width: 400px;
   height: 300px;
-  display: block;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -143,12 +157,8 @@
   box-sizing: border-box;
 }
 
-.content textarea:focus {
+textarea:focus {
   outline: 0;
-}
-
-textarea {
-  display: none;
 }
 
 /* Disable link underline */
