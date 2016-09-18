@@ -15,7 +15,7 @@ function makeExtractRequest(url, callback) {
 
 function onTextExtracted(response, statusCode, srcUrl) {
 
-  oldLength = (response.match(/\n/g) || []).length;
+  oldLength = (response.match(/\w[.?!](\s|$)/g) || []).length;
 
   console.log("Status: " + statusCode);
   console.log("\n\nSource text:\n\n" + response);
@@ -63,7 +63,7 @@ function onSummarizeResponse(response, statusCode) {
 
 function getSummary(summary) {
 
-	var newLength = (summary.match(/\n\n/g) || []).length;
+	var newLength = (summary.match(/\w[.?!](\s|$)/g) || []).length;
 
 	// set length stats
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength + " lines to " + newLength + ".";
