@@ -1,7 +1,7 @@
 function getSummary() {
 
 	var oldLength = 200;
-	var summary = 'Summary goes here';
+	var summary = "Summary goes here.";
 	var newLength = summary.length;
 
 	// set length stats
@@ -15,7 +15,8 @@ function getSummary() {
 
 function onCopy() {
 
-	window.close();
+	document.getElementById('summary').select();
+	document.execCommand('copy');
 
 }
 

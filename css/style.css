@@ -1,5 +1,5 @@
 .toggle{
-  position: absolute;
+  position:absolute;
   top:10px;
   right: 10px;
 }
@@ -42,8 +42,9 @@
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin-left: 10px;
-  margin-right: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
