@@ -96,7 +96,7 @@ function extract(responseText) {
           state = ST_NONE;
           isExtracting = false;
           processedText = processedText.slice(0, -3);   // discard last 3 chars ('</p')
-          processedText += "\n\n";
+          processedText += "\n\n\n\n";
         } else {                  // </p..
           state = ST_SKIP;
           isExtracting = false;
@@ -117,7 +117,7 @@ function extract(responseText) {
           state = ST_NONE;
           isExtracting = false;
           processedText = processedText.slice(0, -4);   // discard last 4 chars ('</h1')
-          processedText += "\n\n";
+          processedText += "\n\n\n\n";
         } else {                  // </h1..
           state = ST_SKIP;
           isExtracting = false;
