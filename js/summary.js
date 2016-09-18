@@ -1,3 +1,5 @@
+var oldLength = 0;
+
 function makeExtractRequest(url, callback) {
   var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "&extractor=ArticleExtractor&output=htmlFragment";
   var xmlHttp = new XMLHttpRequest();
@@ -11,6 +13,8 @@ function makeExtractRequest(url, callback) {
 }
 
 function onTextExtracted(response, statusCode) {
+  oldLength = (response.match(/\n/g) || []).length;
+
   console.log("Status: " + statusCode);
   console.log("\n\nSource text:\n\n" + response);
   var processedText = extract(response);
@@ -44,17 +48,22 @@ function makeSummarizeRequest(processedText, callback) {
 function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
   console.log("\n\nSummary request result:\n\n" + response);
+  // compress extra newlines
+  response = response.replace(/(\\r\\n|\\r|\\n){2,}/g, '$1\\n');
+  // remove leading and trailing newlines 
+  response = response.replace(/^\\n+|\\n+$/g,'');
+  console.log("\n\nStripped result:\n\n" + response);
+
   var jsonResponse = JSON.parse(response);
   getSummary(jsonResponse.result);
 }
 
 function getSummary(summary) {
 
-	var oldLength = 200;
 	var newLength = (summary.match(/\n/g) || []).length;
 
 	// set length stats
-  document.getElementById('lengths').innerHTML = "Shortened from " + oldLength+ " lines to " + newLength + ".";
+  document.getElementById('lengths').innerHTML = "Shortened from " + oldLength + " lines to " + newLength + ".";
 	document.getElementById('rate').innerHTML = "Was that a good summary?" ;
 
   // setup button
