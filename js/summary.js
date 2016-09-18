@@ -50,12 +50,12 @@ function onSummarizeResponse(response, statusCode) {
 
 function getSummary(summary) {
 
-  var oldLength = 200;
-  var newLength = (summary.match(/\n/g) || []).length;;
+	var oldLength = 200;
+	var newLength = (summary.match(/\n/g) || []).length;;
 
-  // set length stats
+	// set length stats
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength+ " lines to " + newLength + ".";
-  document.getElementById('rate').innerHTML = "Was that a good summary?" ;
+	document.getElementById('rate').innerHTML = "Was that a good summary?" ;
 
   // setup button
   document.body.innerHTML = document.body.innerHTML.replace('?</span>',
@@ -65,32 +65,32 @@ function getSummary(summary) {
   document.getElementById("up").addEventListener("click", thumbsUp);
   document.getElementById("down").addEventListener("click", thumbsDown);
 
-  // set summary output
+	// set summary output
   document.body.innerHTML = document.body.innerHTML.replace('<div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>',
                                                             '<textarea id="summary" readonly></textarea>');
   
-  document.getElementById('summary').value = summary;
+	document.getElementById('summary').value = summary;
 
 }
 
 function onCopy() {
 
-  document.getElementById('summary').select();
-  document.execCommand('copy');
+	document.getElementById('summary').select();
+	document.execCommand('copy');
 
 }
 
 function thumbsUp() {
 
-  document.getElementById('up').style.color = "#7DB4B5";
-  document.getElementById('down').disabled = true;
+	document.getElementById('up').style.color = "#7DB4B5";
+	document.getElementById('down').disabled = true;
 
 }
 
 function thumbsDown() {
 
-  document.getElementById('down').style.color = "#7DB4B5";
-  document.getElementById('up').disabled = true;
+	document.getElementById('down').style.color = "#7DB4B5";
+	document.getElementById('up').disabled = true;
 
 }
 
