@@ -25,13 +25,13 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*/"],
+      "matches": "<all_urls>",
       "exclude_globs": [
         "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
         "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
       ],
       "css": ["css/main.css"],
-      "js": ["js/hover.js"],
+      "js": ["js/jquery.min.js", "js/hover.js"],
       "run_at": "document_end",
       "all_frames": true
     }
