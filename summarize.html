@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/font-awesome-4.6.3/css/font-awesome.min.css">
+    <title>d;stl</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/toggle.js"></script>
+    <script src="js/summary.js"></script>
+    <script src="js/extract.js"></script>
+  </head>
+  <body>
+      <!-- Toggle ON/OFF -->
+      <div class="toggle">
+        <label class="switch">
+          <input type="checkbox" id="hover" checked="true">
+          <div class="slider round"></div>
+        </label>
+      </div>
+    <div class="content">
+      <p id="lengths">Sit tight, we're reading your page...</p>
+        <span class="sr-only">Loading...</span>
+        <div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>
+        <textarea id="summary" readonly></textarea>
+        <span id="sentiment"></span>
+        <span id="rate"></span>
+        <button id="up"><i class="fa fa-thumbs-up"></i></button>
+        <button id="down"><i class="fa fa-thumbs-down"></i></button>
+        <span id="copied" title="Copied to clipboard!"></span>
+        <button class="copy" id="copy"><i class="fa fa-clipboard"></i></button>
+    </div>
+  </body>
+</html>

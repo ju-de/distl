@@ -1,12 +1,9 @@
 <!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <title>d;stl</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
@@ -21,17 +18,25 @@
       }
     </style>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
+    <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/popup.js"></script>
+    <script src="js/extract.js"></script>
+    <script src="js/toggle.js"></script>
   </head>
-  <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
+  <body> 
+      <!-- Toggle ON/OFF -->
+      <div class="toggle">
+        <label class="switch" id="hover">
+          <input type="checkbox" checked="true">
+          <div class="slider round"></div>
+        </label>
+      </div>
+    <div class="content">
+      <!-- Logo -->
+      <img src="images/logo.png"></img>
+      <a href="summarize.html">
+        <button class="main" id="summarize_button">Summarize</button>
+      </a>
+    </div>
   </body>
 </html>
-

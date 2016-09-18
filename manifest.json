@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "tldr",
+  "name": "distl",
   "description": "",
   "version": "1.0",
 
@@ -13,13 +13,27 @@
    },
 
   "browser_action": {
-    "default_title": "tldr",
+    "default_title": "distl",
     "default_icon": "images/icon-19.png",
     "default_popup": "popup.html"
   },
 
   "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+    "tabs",
+    "*://*/"
+  ],
+
+  "content_scripts": [
+    // {
+    //   "matches": ["*://*/"],
+    //   "exclude_globs": [
+    //     "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
+    //     "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
+    //   ],
+    //   "css": ["css/main.css"],
+    //   "js": ["js/hover.js"],
+    //   "run_at": "document_end",
+    //   "all_frames": true
+    // }
   ]
 }
