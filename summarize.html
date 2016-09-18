@@ -33,12 +33,10 @@
         </label>
       </div>
     <div class="content">
-      <p class="lengths">Shortened from <span class="oldLength"></span> lines to <span class="newLength"></span>.</p>
-      <textarea id="summary" readonly></textarea>
-        Was this a good summary?
-        <button id="up"><i class="fa fa-thumbs-up"></i></button>
-        <button id="down"><i class="fa fa-thumbs-down"></i></button>
+      <p id="lengths">Sit tight, we're reading your page...</p>
+        <span class="sr-only">Loading...</span>
+        <div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>
+        <span id="rate"></span>
     </div>
-        <button class="copy" id="copy"><i class="fa fa-clipboard"></i></button>
   </body>
 </html>
