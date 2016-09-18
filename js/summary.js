@@ -1,5 +1,4 @@
 var oldLength = 0;
-var sentiment = true;
 
 function makeExtractRequest(url, callback) {
   var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "&extractor=ArticleExtractor&output=htmlFragment";
@@ -32,8 +31,8 @@ function onTextExtracted(response, statusCode, srcUrl) {
 }
 
 function makeSummarizeRequest(processedText, callback, srcUrl) {
-  // var url = "https://hackthenorth16-1505.appspot.com/distl"
-  var url = "http://9ee40701.ngrok.io/distl"; 
+  var url = "https://hackthenorth16-1505.appspot.com/distl"
+  // var url = "http://9ee40701.ngrok.io/distl"; 
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", url, true);
   xmlHttp.setRequestHeader("Content-Type", "application/json");
@@ -90,7 +89,7 @@ function getSummary(jsonResponse) {
     var arr = entities[objKey];
   }
 
-  if ( sentiment )
+  if ( jsonResponse.sentiment === 'positive' )
     document.body.innerHTML = document.body.innerHTML.replace('<span id="sentiment"></span>', '<span id="sentiment">Positive  <i class="fa fa-plus-circle" aria-hidden="true"></i></span>');
   else
     document.body.innerHTML = document.body.innerHTML.replace('<span id="sentiment"></span>', '<span id="sentiment">Negative  <i class="fa fa-minus-circle" aria-hidden="true"></i></i></span>');
