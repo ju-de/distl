@@ -16,7 +16,7 @@ function makeExtractRequest(url, callback) {
 function onTextExtracted(response, statusCode, srcUrl) {
 
   oldLength = (response.match(/\n/g) || []).length;
-  
+
   console.log("Status: " + statusCode);
   console.log("\n\nSource text:\n\n" + response);
   var processedText = extract(response);
@@ -50,6 +50,7 @@ function makeSummarizeRequest(processedText, callback, srcUrl) {
 function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
   console.log("\n\nSummary request result:\n\n" + response);
+  response = response.replace(/\\n/g,'\\n\\n');
   // compress extra newlines
   response = response.replace(/(\\r\\n|\\r|\\n){2,}/g, '$1\\n');
   // remove leading and trailing newlines 
