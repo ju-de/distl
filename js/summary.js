@@ -1,13 +1,27 @@
 function getSummary() {
-	console.log("we in this");
 
-	var oldLength = 100;
-	var summary = "text goes here";
+	var oldLength = 200;
+	var summary = 'Summary goes here';
 	var newLength = summary.length;
 
-	console.log(oldLength, summary, newLength);
+	// set length stats
+	document.querySelector('.content .lengths .oldLength').innerHTML = oldLength;
+	document.querySelector('.content .lengths .newLength').innerHTML = newLength;
 
-	document.querySelector('.content .oldLength').innerHTML = oldLength;
-	document.querySelector('.content .newLength').innerHTML = newLength;
+	// set summary output
 	document.getElementById('summary').value = summary;
+
+}
+
+function onCopy() {
+
+	window.close();
+
+}
+
+window.onload = function() {
+
+  getSummary();
+  document.getElementById("copy").addEventListener("click", onCopy);
+
 }
