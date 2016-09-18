@@ -16,7 +16,7 @@ function onTextExtracted(response, statusCode) {
   var processedText = extract(response);
   console.log("\n\nProcessed text:\n\n" + processedText);
 
-  var textBox = document.getElementById('summary');
+  var textBox = document.getElementById('hidden');
   textBox.innerHTML = processedText;
   processedText = textBox.textContent;
   textBox.textContent = "";
@@ -51,7 +51,7 @@ function onSummarizeResponse(response, statusCode) {
 function getSummary(summary) {
 
 	var oldLength = 200;
-	var newLength = (summary.match(/\n/g) || []).length;;
+	var newLength = (summary.match(/\n/g) || []).length;
 
 	// set length stats
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength+ " lines to " + newLength + ".";
