@@ -31,7 +31,7 @@ function onTextExtracted(response, statusCode, srcUrl) {
 }
 
 function makeSummarizeRequest(processedText, callback, srcUrl) {
-  var url = "https://hackthenorth16-1505.appspot.com/distl"
+  var url = "http://9ee40701.ngrok.io/distl"
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", url, true);
   xmlHttp.setRequestHeader("Content-Type", "application/json");
@@ -58,13 +58,13 @@ function onSummarizeResponse(response, statusCode) {
   console.log("\n\nStripped result:\n\n" + response);
 
   var jsonResponse = JSON.parse(response);
-  getSummary(jsonResponse.result);
+  getSummary(jsonResponse);
 }
 
-function getSummary(summary) {
+function getSummary(jsonResponse) {
 
   // remove leading and trailing newlines 
-  summary = summary.replace(/^\n+|\n+$/g,'');
+  summary = jsonResponse.result.replace(/^\n+|\n+$/g,'');
 	var newLength = (summary.match(/\w[.?!](\s|$)/g) || []).length;
 
 	// set length stats
@@ -81,6 +81,13 @@ function getSummary(summary) {
 	// set summary output
   document.body.innerHTML = document.body.innerHTML.replace('<div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>', '');
   
+  summary += "\n\n==================\n";
+  var entities = jsonResponse.entities;
+  for (var objKey in entities) {
+    summary += ("\n" + objKey[0].toUpperCase() + objKey.substr(1) + ":\n  " + entities[objKey].join(', ') + "\n");
+    var arr = entities[objKey];
+  }
+
 	document.getElementById('summary').value = summary;
 
 }
