@@ -130,7 +130,7 @@
 }
 
 /* Textbox */
-textarea {
+.content textarea {
   font-size: 14px;
   width: 400px;
   height: 300px;
@@ -143,8 +143,12 @@ textarea {
   box-sizing: border-box;
 }
 
-textarea:focus {
+.content textarea:focus {
   outline: 0;
+}
+
+textarea {
+  display: none;
 }
 
 /* Disable link underline */
