@@ -15,6 +15,12 @@ function onTextExtracted(response, statusCode) {
   console.log("\n\nSource text:\n\n" + response);
   var processedText = extract(response);
   console.log("\n\nProcessed text:\n\n" + processedText);
+
+  var textBox = document.getElementById('summary');
+  textBox.innerHTML = processedText;
+  processedText = textBox.textContent;
+  textBox.textContent = "";
+
   makeSummarizeRequest(processedText, onSummarizeResponse);
 }
 
@@ -38,7 +44,8 @@ function makeSummarizeRequest(processedText, callback) {
 function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
   console.log("\n\nSummary request result:\n\n" + response);
-  getSummary(response);
+  var jsonResponse = JSON.parse(response);
+  getSummary(jsonResponse.text);
 }
 
 function getSummary(summary) {
@@ -81,5 +88,13 @@ window.onload = function() {
   document.getElementById("up").addEventListener("click", thumbsUp);
   document.getElementById("down").addEventListener("click", thumbsDown);
   
-  makeExtractRequest("http://waitbutwhy.com/2016/09/marriage-decision.html", onTextExtracted);
+  chrome.tabs.query(
+    {
+        active: true,
+        currentWindow: true
+    },
+    function(tabs) {
+        var currentUrl = tabs[0].url;
+        makeExtractRequest(currentUrl, onTextExtracted);
+    });
 }
