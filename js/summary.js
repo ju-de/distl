@@ -22,7 +22,7 @@ function onTextExtracted(response, statusCode, srcUrl) {
   var processedText = extract(response);
   console.log("\n\nProcessed text:\n\n" + processedText);
 
-  var textBox = document.getElementById('hidden');
+  var textBox = document.getElementById('summary');
   textBox.innerHTML = processedText;
   processedText = textBox.textContent;
   textBox.textContent = "";
@@ -69,17 +69,15 @@ function getSummary(summary) {
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength + " lines to " + newLength + ".";
 	document.getElementById('rate').innerHTML = "Was that a good summary?" ;
 
-  // setup button
-  document.body.innerHTML = document.body.innerHTML.replace('?</span>',
-                                                            '?</span><button id="up"><i class="fa fa-thumbs-up"></i></button><button id="down"><i class="fa fa-thumbs-down"></i></button><button class="copy" id="copy"><i class="fa fa-clipboard"></i></button>');
+  // show buttons
+  document.getElementById("copy").style.display = "inline";
+  document.getElementById("up").style.display = "inline";
+  document.getElementById("down").style.display = "inline";
 
-  document.getElementById("copy").addEventListener("click", onCopy);
-  document.getElementById("up").addEventListener("click", thumbsUp);
-  document.getElementById("down").addEventListener("click", thumbsDown);
+  document.getElementById("summary").style.display = "block";
 
 	// set summary output
-  document.body.innerHTML = document.body.innerHTML.replace('<div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>',
-                                                            '<textarea id="summary" readonly></textarea>');
+  document.body.innerHTML = document.body.innerHTML.replace('<div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>', '');
   
 	document.getElementById('summary').value = summary;
 
@@ -87,6 +85,7 @@ function getSummary(summary) {
 
 function onCopy() {
 
+  console.log("copy");
 	document.getElementById('summary').select();
 	document.execCommand('copy');
 
@@ -107,6 +106,12 @@ function thumbsDown() {
 }
 
 window.onload = function() {
+
+  // setup buttons
+  document.getElementById("copy").addEventListener("click", onCopy);
+  document.getElementById("up").addEventListener("click", thumbsUp);
+  document.getElementById("down").addEventListener("click", thumbsDown);
+
   chrome.tabs.query(
     {
         active: true,
