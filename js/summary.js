@@ -6,15 +6,17 @@ function makeExtractRequest(url, callback) {
   xmlHttp.open("GET", fullUrl, true);
   xmlHttp.onreadystatechange = function() {
     if (xmlHttp.readyState == 4) {
-      callback(xmlHttp.responseText, xmlHttp.status);
+      callback(xmlHttp.responseText, xmlHttp.status, url);
     }
   }
   xmlHttp.send();
 }
 
-function onTextExtracted(response, statusCode) {
-  oldLength = (response.match(/\n/g) || []).length;
 
+function onTextExtracted(response, statusCode, srcUrl) {
+
+  oldLength = (response.match(/\n/g) || []).length;
+  
   console.log("Status: " + statusCode);
   console.log("\n\nSource text:\n\n" + response);
   var processedText = extract(response);
@@ -25,10 +27,10 @@ function onTextExtracted(response, statusCode) {
   processedText = textBox.textContent;
   textBox.textContent = "";
 
-  makeSummarizeRequest(processedText, onSummarizeResponse);
+  makeSummarizeRequest(processedText, onSummarizeResponse, srcUrl);
 }
 
-function makeSummarizeRequest(processedText, callback) {
+function makeSummarizeRequest(processedText, callback, srcUrl) {
   var url = "https://hackthenorth16-1505.appspot.com/distl"
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", url, true);
@@ -40,7 +42,7 @@ function makeSummarizeRequest(processedText, callback) {
   }
   xmlHttp.send(JSON.stringify(
   {
-    "url": "test",
+    "url": srcUrl,
     "data": processedText
   }));
 }
