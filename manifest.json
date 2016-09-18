@@ -24,16 +24,16 @@
   ],
 
   "content_scripts": [
-    {
-      "matches": ["*://*/"],
-      "exclude_globs": [
-        "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
-        "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
-      ],
-      "css": ["css/main.css"],
-      "js": ["js/hover.js"],
-      "run_at": "document_end",
-      "all_frames": true
-    }
+    // {
+    //   "matches": ["*://*/"],
+    //   "exclude_globs": [
+    //     "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
+    //     "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
+    //   ],
+    //   "css": ["css/main.css"],
+    //   "js": ["js/hover.js"],
+    //   "run_at": "document_end",
+    //   "all_frames": true
+    // }
   ]
 }
