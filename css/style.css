@@ -1,6 +1,6 @@
 .toggle{
   position:absolute;
-  top:10px;
+  top: 10px;
   right: 10px;
 }
 
@@ -12,7 +12,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
 }
 
 .content img{
@@ -34,6 +33,7 @@
   outline: 0;
 }
 
+/* Summarize button */
 .content button.main {
   background-color: #7DB4B5;
   border: none;
@@ -54,12 +54,38 @@
   background-color: #680148;
 }
 
-.content button.rate{
+/* Copy button */
+.copy{
+  position: absolute;
+  right: 70px;
+  bottom: 90px;
   font-size: 20px;
-  background-color: white;
+  background-color: transparent;
+  color: #E0EFF1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  opacity: 0.9;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.copy:hover {
+  color: #7DB4B5;
+}
+
+.copy:focus{
+  outline: 0;
+}
+
+/* Thumbs up/down button */
+#up {
+  font-size: 20px;
+  background-color: transparent;
   color: #E0EFF1;
   margin-top: 5px;
-
   border: none;
   text-align: center;
   text-decoration: none;
@@ -68,8 +94,33 @@
   transition-duration: 0.4s;
 }
 
-.content button.rate:hover{
+#up:hover {
   color: #7DB4B5;
+}
+
+#up:focus{
+  outline: 0;
+}
+
+#down {
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  margin-top: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#down:hover {
+  color: #7DB4B5;
+}
+
+#down:focus{
+  outline: 0;
 }
 
 /* Textbox */
@@ -77,9 +128,12 @@ textarea {
   width: 400px;
   height: 300px;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+  resize: none;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 textarea:focus {
@@ -87,12 +141,12 @@ textarea:focus {
 }
 
 /* Disable link underline */
-a:hover, a:visited, a:link, a:active{
+a:hover, a:visited, a:link, a:active {
   cursor: default;
   text-decoration: none;
 }
 
-/* The switch - the box around the slider */
+/* Toggle button */
 .switch {
   position: relative;
   display: inline-block;
@@ -100,10 +154,10 @@ a:hover, a:visited, a:link, a:active{
   height: 24px;
 }
 
-/* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+  display:none;
+}
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
