@@ -1,7 +1,7 @@
 function makeExtractRequest(url, callback) {
   var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "&extractor=ArticleExtractor&output=htmlFragment";
   var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", "http://www.example.com", true);
+  xmlHttp.open("GET", fullUrl, true);
   xmlHttp.onreadystatechange = function() {
     if (xmlHttp.readyState == 4) {
       callback(xmlHttp.responseText, xmlHttp.status);
@@ -37,7 +37,7 @@ function makeSummarizeRequest(processedText, callback) {
   xmlHttp.send(JSON.stringify(
   {
     "url": "test",
-    "text": processedText
+    "data": processedText
   }));
 }
 
@@ -45,7 +45,7 @@ function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
   console.log("\n\nSummary request result:\n\n" + response);
   var jsonResponse = JSON.parse(response);
-  getSummary(jsonResponse.text);
+  getSummary(jsonResponse.result);
 }
 
 function getSummary(summary) {
