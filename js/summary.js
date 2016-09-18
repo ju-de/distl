@@ -63,7 +63,7 @@ function onSummarizeResponse(response, statusCode) {
 
 function getSummary(summary) {
 
-	var newLength = (summary.match(/\n/g) || []).length;
+	var newLength = (summary.match(/\n\n/g) || []).length;
 
 	// set length stats
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength + " lines to " + newLength + ".";
