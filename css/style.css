@@ -80,6 +80,12 @@
   outline: 0;
 }
 
+/* Loading icon */
+.loading {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
 /* Thumbs up/down button */
 #up {
   font-size: 20px;
@@ -125,6 +131,7 @@
 
 /* Textbox */
 textarea {
+  font-size: 14px;
   width: 400px;
   height: 300px;
   display: block;
