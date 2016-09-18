@@ -49,14 +49,12 @@ function makeSummarizeRequest(processedText, callback, srcUrl) {
 
 function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
+  
   console.log("\n\nSummary request result:\n\n" + response);
+  // double up newlines for formatting
   response = response.replace(/\\n/g,'\\n\\n');
   // compress extra newlines
   response = response.replace(/(\\r\\n|\\r|\\n){2,}/g, '$1\\n');
-  // remove leading and trailing newlines 
-  response = response.replace(/^\\n+|\\n+$/g,'');
-  // strip "Title" at beginning just in case
-  response = response.replace(/Title\\n\\n/g,'');
   console.log("\n\nStripped result:\n\n" + response);
 
   var jsonResponse = JSON.parse(response);
@@ -65,6 +63,8 @@ function onSummarizeResponse(response, statusCode) {
 
 function getSummary(summary) {
 
+  // remove leading and trailing newlines 
+  summary = summary.replace(/^\n+|\n+$/g,'');
 	var newLength = (summary.match(/\w[.?!](\s|$)/g) || []).length;
 
 	// set length stats
@@ -97,6 +97,7 @@ function thumbsUp() {
 
 	document.getElementById('up').style.color = "#7DB4B5";
 	document.getElementById('down').disabled = true;
+  document.getElementById('rate').innerHTML = "Thanks for the feedback!" ;
 
 }
 
@@ -104,6 +105,7 @@ function thumbsDown() {
 
 	document.getElementById('down').style.color = "#7DB4B5";
 	document.getElementById('up').disabled = true;
+  document.getElementById('rate').innerHTML = "Thanks for the feedback!" ;
 
 }
 

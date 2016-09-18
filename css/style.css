@@ -132,8 +132,13 @@
   outline: 0;
 }
 
+#rate {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
 /* Textbox */
-.content textarea {
+textarea {
   display: none;
   font-size: 14px;
   width: 400px;
@@ -146,7 +151,7 @@
   box-sizing: border-box;
 }
 
-.content textarea:focus {
+textarea:focus {
   outline: 0;
 }
 

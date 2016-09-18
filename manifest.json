@@ -30,7 +30,10 @@
         "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
         "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
       ],
-      "js": ["js/hover.js"]
+      "css": ["css/main.css"],
+      "js": ["js/hover.js"],
+      "run_at": "document_end",
+      "all_frames": true
     }
   ]
 }
