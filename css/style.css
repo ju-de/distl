@@ -16,9 +16,9 @@
 
 .content img{
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 	height: auto;
-	width: 30%;
+	width: 25%;
 	
   /*disable highlighting*/
 	-webkit-user-select: none;
@@ -135,6 +135,12 @@
 #rate {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+}
+
+#sentiment {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
 }
 
 /* Textbox */

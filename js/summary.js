@@ -1,4 +1,5 @@
 var oldLength = 0;
+var sentiment = true;
 
 function makeExtractRequest(url, callback) {
   var fullUrl = "http://boilerpipe-web.appspot.com/extract?url=" + url + "&extractor=ArticleExtractor&output=htmlFragment";
@@ -31,7 +32,8 @@ function onTextExtracted(response, statusCode, srcUrl) {
 }
 
 function makeSummarizeRequest(processedText, callback, srcUrl) {
-  var url = "http://9ee40701.ngrok.io/distl"
+  // var url = "https://hackthenorth16-1505.appspot.com/distl"
+  var url = "http://9ee40701.ngrok.io/distl"; 
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", url, true);
   xmlHttp.setRequestHeader("Content-Type", "application/json");
@@ -49,7 +51,7 @@ function makeSummarizeRequest(processedText, callback, srcUrl) {
 
 function onSummarizeResponse(response, statusCode) {
   console.log("\n\nSummary request status: " + statusCode);
-  
+
   console.log("\n\nSummary request result:\n\n" + response);
   // double up newlines for formatting
   response = response.replace(/\\n/g,'\\n\\n');
@@ -69,7 +71,7 @@ function getSummary(jsonResponse) {
 
 	// set length stats
   document.getElementById('lengths').innerHTML = "Shortened from " + oldLength + " lines to " + newLength + ".";
-	document.getElementById('rate').innerHTML = "Was that a good summary?" ;
+  document.getElementById('rate').innerHTML = "Was that a good summary?" ;
 
   // show buttons
   document.getElementById("copy").style.display = "inline";
@@ -81,14 +83,19 @@ function getSummary(jsonResponse) {
 	// set summary output
   document.body.innerHTML = document.body.innerHTML.replace('<div class="loading"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>', '');
   
-  summary += "\n\n==================\n";
+  summary += "\n\n-------------------------------------------------------\n";
   var entities = jsonResponse.entities;
   for (var objKey in entities) {
     summary += ("\n" + objKey[0].toUpperCase() + objKey.substr(1) + ":\n  " + entities[objKey].join(', ') + "\n");
     var arr = entities[objKey];
   }
 
-	document.getElementById('summary').value = summary;
+  if ( sentiment )
+    document.body.innerHTML = document.body.innerHTML.replace('<span id="sentiment"></span>', '<span id="sentiment">Positive  <i class="fa fa-plus-circle" aria-hidden="true"></i></span>');
+  else
+    document.body.innerHTML = document.body.innerHTML.replace('<span id="sentiment"></span>', '<span id="sentiment">Negative  <i class="fa fa-minus-circle" aria-hidden="true"></i></i></span>');
+	
+  document.getElementById('summary').value = summary;
 
 }
 
