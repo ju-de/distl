@@ -1,0 +1,245 @@
+.toggle{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.content {
+  color: #7DB4B5;
+  text-align: center;
+	width: 500px;
+	height: 420px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content img{
+  margin-top: 100px;
+  margin-bottom: 10px;
+	height: auto;
+	width: 25%;
+	
+  /*disable highlighting*/
+	-webkit-user-select: none;
+  -webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.content button:focus{
+  outline: 0;
+}
+
+/* Summarize button */
+.content button.main {
+  background-color: #7DB4B5;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.content button.main:hover {
+  background-color: #680148;
+}
+
+/* Copy button */
+.copy{
+  display: none;
+  position: absolute;
+  right: 70px;
+  bottom: 90px;
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  opacity: 0.9;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.copy:hover {
+  color: #7DB4B5;
+}
+
+.copy:focus{
+  outline: 0;
+}
+
+/* Loading icon */
+.loading {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+/* Thumbs up/down button */
+#up {
+  display: none;
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  margin-top: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#up:hover {
+  color: #7DB4B5;
+}
+
+#up:focus{
+  outline: 0;
+}
+
+#down {
+  display: none;
+  font-size: 20px;
+  background-color: transparent;
+  color: #E0EFF1;
+  margin-top: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#down:hover {
+  color: #7DB4B5;
+}
+
+#down:focus{
+  outline: 0;
+}
+
+#rate {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+#sentiment {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+}
+
+/* Textbox */
+textarea {
+  display: none;
+  font-size: 14px;
+  width: 400px;
+  height: 300px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  resize: none;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+textarea:focus {
+  outline: 0;
+}
+
+/* Disable link underline */
+a:hover, a:visited, a:link, a:active {
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Toggle button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #680148;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #E0EFF1;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #7DB4B5;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7DB4B5;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #E0EFF1;
+
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}

@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+
+  "name": "distl",
+  "description": "",
+  "version": "1.0",
+
+  "homepage_url": "https://github.com/ju-de/tldr",
+
+  "icons": {
+     "16": "images/icon-16.png",
+     "128": "images/icon-128.png"
+   },
+
+  "browser_action": {
+    "default_title": "distl",
+    "default_icon": "images/icon-19.png",
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "tabs",
+    "*://*/"
+  ],
+
+  "content_scripts": [
+    // {
+    //   "matches": ["*://*/"],
+    //   "exclude_globs": [
+    //     "*.jpe?g", "*.gifv?", "*.png", "*.bmp", "*.pdf", "*.mp3", "*.wav",
+    //     "*facebook*", "*youtube*", "*photo*", "*video*", "*image*"
+    //   ],
+    //   "css": ["css/main.css"],
+    //   "js": ["js/hover.js"],
+    //   "run_at": "document_end",
+    //   "all_frames": true
+    // }
+  ]
+}

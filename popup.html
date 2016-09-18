@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <title>d;stl</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/extract.js"></script>
+    <script src="js/toggle.js"></script>
+  </head>
+  <body> 
+      <!-- Toggle ON/OFF -->
+      <div class="toggle">
+        <label class="switch" id="hover">
+          <input type="checkbox" checked="true">
+          <div class="slider round"></div>
+        </label>
+      </div>
+    <div class="content">
+      <!-- Logo -->
+      <img src="images/logo.png"></img>
+      <a href="summarize.html">
+        <button class="main" id="summarize_button">Summarize</button>
+      </a>
+    </div>
+  </body>
+</html>
